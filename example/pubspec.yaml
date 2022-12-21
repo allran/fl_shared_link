@@ -3,7 +3,7 @@ description: Demonstrates how to use the fl_shared_link plugin.
 publish_to: 'none'
 version: 0.0.1
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
   flutter:
