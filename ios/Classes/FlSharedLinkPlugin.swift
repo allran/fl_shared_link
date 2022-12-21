@@ -74,6 +74,15 @@ public class FlSharedLinkPlugin: NSObject, FlutterPlugin {
         return false
     }
 
+    public func applicationWillEnterForeground(_ application: UIApplication) {
+        openUrlMap = [
+            "url": "",
+            "scheme": "",
+            "action": "applicationWillEnterForeground",
+        ]
+        channel.invokeMethod("onOpenUrl", arguments: openUrlMap)
+    }
+
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable: Any] = [:]) -> Bool {
         launchingWithOptionsMap = launchOptions
         return false
