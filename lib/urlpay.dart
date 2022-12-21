@@ -82,13 +82,13 @@ class URLPay {
   /// 是否安装wx
   Future<bool> isWxAppInstalled() async {
     String app = strDecrypt(encryptWx);
-    return isAppInstalled(app);
+    return canLaunchUrl(Uri(scheme: app));
   }
 
   /// 是否安装ali
   Future<bool> isAliAppInstalled() async {
     String app = strDecrypt(encryptAl);
-    return isAppInstalled(app);
+    return canLaunchUrl(Uri(scheme: app));
   }
 
   /// 开始wx支付
