@@ -20,13 +20,12 @@ class EncryptUtils {
   static aesEncrypt(String plainText) {
     try {
       final key = Key.fromUtf8(_key);
-
-      /// 这里可以配置类型
-      final enc = Encrypter(AES(key, mode: AESMode.cbc));
-      final encrypted = enc.encrypt(plainText, iv: IV.fromLength(16));
-      return encrypted.base64;
+      // final iv = IV.fromLength(16); (ok in 5.0.1 not in 5.0.3)
+      final iv = IV.allZerosOfLength(16);
+      final encrypter = Encrypter(AES(key));
+      return encrypter.encrypt(plainText, iv: iv).base64;
     } catch (err) {
-      // print("aes encode error:$err");
+      print("aes encode error:$err");
       return plainText;
     }
   }
@@ -35,11 +34,12 @@ class EncryptUtils {
   static dynamic aesDecrypt(String encrypted) {
     try {
       final key = Key.fromUtf8(_key);
-      final enc = Encrypter(AES(key, mode: AESMode.cbc));
-      final decrypted = enc.decrypt64(encrypted, iv: IV.fromLength(16));
-      return decrypted;
+      // final iv = IV.fromLength(16); (ok in 5.0.1 not in 5.0.3)
+      final iv = IV.allZerosOfLength(16);
+      final encrypter = Encrypter(AES(key));
+      return encrypter.decrypt(Encrypted.fromBase64(encrypted), iv: iv);
     } catch (err) {
-      // print("aes decode error:$err");
+      print("aes decode error:$err");
       return encrypted;
     }
   }

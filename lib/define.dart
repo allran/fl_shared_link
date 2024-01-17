@@ -1,13 +1,13 @@
 import './crypto.dart';
 
-const String encryptWx = "pine1Jzl1ZUpxcM1LbEkxg==";
-const String encryptWxname = "NWsi9XvGVjkfBWC670z1JQ==";
-const String encryptSafep = "eR9EZrdqvq5blvEKpMxc+w==";
+const String encryptWx = "jE+mv74cky9+SjEgi1CB1A==";
+const String encryptWxname = "HpRhI2jTky9+SjEgi1CB1A==";
+const String encryptSafep = "iEupoqcT4Cx9STIjiFOC1w==";
 
-const String encryptAl = "FtFVwxkL/d6vBBgMRhULKg==";
-const String encryptSafeP = "RqvtdSUd2HdjbZOM981kqw==";
-const String encryptAlclient = "PrFrU1bBBj3qR3zCimnTyQ==";
-const String encryptAlname = "CtELlQClUWF3UOA7ET56Ag==";
+const String encryptAl = "mkamt7YLky9+SjEgi1CB1A==";
+const String encryptSafeP = "qEupoocT4Cx9STIjiFOC1w==";
+const String encryptAlclient = "mkamt7YL+kkdJVVehV6P2g==";
+const String encryptAlname = "Hb5gI2zqfIvpRzwthl2M2Q==";
 
 /// 加密文字
 String strEncrypt(String str) {

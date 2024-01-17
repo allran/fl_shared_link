@@ -2,6 +2,8 @@ import 'package:fl_shared_link/fl_shared_link.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'encrypt_str.dart';
+
 bool get _isAndroid => defaultTargetPlatform == TargetPlatform.android;
 
 bool get _isIOS => defaultTargetPlatform == TargetPlatform.iOS;
@@ -59,6 +61,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    startEncrypt();
     List<Widget> children = [];
     if (_isAndroid) children = androidChildren;
     if (_isIOS) children = iosChildren;
