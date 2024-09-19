@@ -26,7 +26,9 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 31
-
+    if (project.android.hasProperty("namespace")) {
+        namespace 'fl.shared.link'
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
